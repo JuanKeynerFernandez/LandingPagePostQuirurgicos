@@ -1,0 +1,26 @@
+---
+import type { WhatsAppIntent } from '../../data/types';
+import { whatsappUrl } from '../../lib/whatsapp';
+import Icon from './Icon.astro';
+
+interface Props {
+  intent: WhatsAppIntent;
+  placement: string;
+  variant?: 'primary' | 'light' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  block?: boolean;
+}
+
+const { intent, placement, variant = 'primary', size = 'md', block = false } = Astro.props;
+---
+
+<a
+  href={whatsappUrl(intent)}
+  class:list={['btn', `btn--${variant}`, `btn--${size}`, { 'btn--block': block }]}
+  target="_blank"
+  rel="noopener"
+  data-whatsapp={placement}
+>
+  <Icon name="whatsapp" size={size === 'lg' ? 22 : 20} />
+  <slot />
+</a>

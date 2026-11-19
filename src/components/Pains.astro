@@ -1,0 +1,73 @@
+---
+import { course } from '../data/course';
+import { emphasize } from '../lib/text';
+import Section from './ui/Section.astro';
+
+const { pains } = course;
+---
+
+<Section id="te-ha-pasado" tone="tint" eyebrow={pains.eyebrow} title={pains.title}>
+  <ul class="pains">
+    {
+      pains.items.map((item) => (
+        <li class="pain">
+          <p>{item}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="pains__closing" set:html={emphasize(pains.closing)} />
+</Section>
+
+<style>
+  .pains {
+    display: grid;
+    gap: 1rem;
+    max-width: 52rem;
+    margin-inline: auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pain {
+    position: relative;
+    padding: 1.25rem 1.25rem 1.25rem 3.25rem;
+    border-radius: var(--radius) var(--radius) var(--radius) 6px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    font-size: 1.0625rem;
+    font-weight: 500;
+  }
+
+  .pain::before {
+    content: '“';
+    position: absolute;
+    top: 0.55rem;
+    left: 1rem;
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    line-height: 1;
+    color: var(--aqua-400);
+  }
+
+  .pains__closing {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .pains__closing :global(em) {
+    color: var(--aqua-700);
+  }
+
+  @media (min-width: 720px) {
+    .pains {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+  }
+</style>

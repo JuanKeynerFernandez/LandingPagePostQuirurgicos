@@ -1,0 +1,63 @@
+---
+import { course } from '../data/course';
+import Section from './ui/Section.astro';
+
+const { testimonials } = course;
+---
+
+{
+  testimonials.items.length > 0 && (
+    <Section id="testimonios" eyebrow={testimonials.eyebrow} title={testimonials.title}>
+      <div class="testimonials">
+        {testimonials.items.map((item) => (
+          <figure class="testimonial">
+            <blockquote>
+              <p>“{item.quote}”</p>
+            </blockquote>
+            <figcaption>
+              <strong>{item.name}</strong>
+              <span>{item.role}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+<style>
+  .testimonials {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .testimonial {
+    display: grid;
+    gap: 1.25rem;
+    align-content: space-between;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .testimonial blockquote {
+    font-size: 1.0625rem;
+  }
+
+  .testimonial figcaption {
+    display: grid;
+    font-size: 0.9375rem;
+  }
+
+  .testimonial figcaption span {
+    color: var(--ink-soft);
+  }
+
+  @media (min-width: 760px) {
+    .testimonials {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+  }
+</style>

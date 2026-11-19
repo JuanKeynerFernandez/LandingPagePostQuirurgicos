@@ -1,0 +1,181 @@
+---
+import { course } from '../data/course';
+import Icon from './ui/Icon.astro';
+import Section from './ui/Section.astro';
+import WhatsAppButton from './ui/WhatsAppButton.astro';
+
+const { modules } = course;
+const number = (index: number) => String(index + 1).padStart(2, '0');
+---
+
+<Section id="modulos" eyebrow={modules.eyebrow} title={modules.title} intro={modules.intro} narrow>
+  <ol class="modules">
+    {
+      modules.items.map((module, index) => (
+        <li>
+          <details class="module" open={index === 0}>
+            <summary class="module__summary">
+              <span class="module__number">{number(index)}</span>
+              <span class="module__title">{module.title}</span>
+              <span class="module__toggle">
+                <Icon name="plus" size={18} />
+              </span>
+            </summary>
+            <div class="module__body">
+              <ul class="module__topics">
+                {module.topics.map((topic) => (
+                  <li>
+                    <Icon name="check" size={16} class="module__topic-icon" />
+                    {topic}
+                  </li>
+                ))}
+              </ul>
+              <p class="module__result">
+                <Icon name="sparkle" size={18} class="module__result-icon" />
+                <span>
+                  <strong>Resultado:</strong> {module.result}
+                </span>
+              </p>
+            </div>
+          </details>
+        </li>
+      ))
+    }
+  </ol>
+
+  <div class="modules__cta">
+    <WhatsAppButton intent="enroll" placement="modulos" size="lg">{modules.cta}</WhatsAppButton>
+  </div>
+</Section>
+
+<style>
+  .modules {
+    display: grid;
+    gap: 0.85rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .module {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .module[open] {
+    border-color: var(--aqua-300);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .module__summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.15rem;
+  }
+
+  .module__number {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--aqua-50);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--aqua-700);
+  }
+
+  .module[open] .module__number {
+    background: var(--aqua-700);
+    color: #fff;
+  }
+
+  .module__title {
+    flex: 1;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .module__toggle {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--aqua-50);
+    color: var(--aqua-700);
+    transition: transform 0.25s ease;
+  }
+
+  .module[open] .module__toggle {
+    transform: rotate(45deg);
+  }
+
+  .module__body {
+    display: grid;
+    gap: 1.1rem;
+    padding: 0 1.15rem 1.35rem;
+  }
+
+  .module__topics {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0;
+    list-style: none;
+    color: var(--ink-soft);
+  }
+
+  .module__topics li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .module__topics :global(.module__topic-icon) {
+    margin-top: 0.3rem;
+    color: var(--aqua-600);
+  }
+
+  .module__result {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--aqua-50);
+    font-size: 0.975rem;
+  }
+
+  .module__result :global(.module__result-icon) {
+    margin-top: 0.15rem;
+    color: var(--aqua-700);
+  }
+
+  .modules__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .module__summary {
+      padding: 1.15rem 1.5rem;
+    }
+
+    .module__body {
+      padding: 0 1.5rem 1.5rem 5.25rem;
+    }
+
+    .module__topics {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
+    }
+  }
+</style>

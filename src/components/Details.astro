@@ -1,0 +1,154 @@
+---
+import { course } from '../data/course';
+import Icon from './ui/Icon.astro';
+import Section from './ui/Section.astro';
+import WhatsAppButton from './ui/WhatsAppButton.astro';
+
+const { details, bonuses, certification } = course;
+---
+
+<Section
+  id="modalidad"
+  tone="sand"
+  eyebrow={details.eyebrow}
+  title={details.title}
+  intro={details.intro}
+>
+  <ul class="details">
+    {
+      details.items.map((item) => (
+        <li class="detail">
+          <span class="detail__icon">
+            <Icon name={item.icon} size={22} />
+          </span>
+          <h3 class="detail__label">{item.label}</h3>
+          <p class="detail__value">{item.value ?? item.fallback}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    (bonuses.confirmed || certification) && (
+      <div class="extras">
+        {bonuses.confirmed && (
+          <article class="extra">
+            <h3 class="extra__title">
+              <Icon name="gift" size={22} />
+              {bonuses.title}
+            </h3>
+            <ul class="extra__list">
+              {bonuses.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        )}
+        {certification && (
+          <article class="extra">
+            <h3 class="extra__title">
+              <Icon name="award" size={22} />
+              {certification.title}
+            </h3>
+            <p>{certification.description}</p>
+          </article>
+        )}
+      </div>
+    )
+  }
+
+  <div class="details__cta">
+    <WhatsAppButton intent="details" placement="modalidad" size="lg">{details.cta}</WhatsAppButton>
+  </div>
+</Section>
+
+<style>
+  .details {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .detail {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+  }
+
+  .detail__icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.25rem;
+    border-radius: 14px;
+    background: var(--aqua-100);
+    color: var(--aqua-700);
+  }
+
+  .detail__label {
+    font-size: 1.25rem;
+  }
+
+  .detail__value {
+    color: var(--ink-soft);
+  }
+
+  .extras {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .extra {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background: var(--aqua-900);
+    color: #fff;
+  }
+
+  .extra__title {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 0.85rem;
+    font-size: 1.35rem;
+  }
+
+  .extra__title :global(.icon) {
+    color: var(--aqua-300);
+  }
+
+  .extra__list {
+    display: grid;
+    gap: 0.4rem;
+    padding-left: 1.25rem;
+    color: var(--aqua-100);
+  }
+
+  .details__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 560px) {
+    .details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .details {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .extras {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+  }
+</style>

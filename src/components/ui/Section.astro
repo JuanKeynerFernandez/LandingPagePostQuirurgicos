@@ -1,0 +1,69 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { emphasize } from '../../lib/text';
+
+interface Props extends HTMLAttributes<'section'> {
+  tone?: 'light' | 'tint' | 'sand' | 'dark';
+  eyebrow?: string;
+  title?: string;
+  intro?: string | undefined;
+  narrow?: boolean;
+}
+
+const {
+  id,
+  tone = 'light',
+  eyebrow,
+  title,
+  intro,
+  narrow = false,
+  class: className,
+  ...attrs
+} = Astro.props;
+
+const headingId = id && title ? `${id}-titulo` : undefined;
+---
+
+<section
+  id={id}
+  class:list={['section', `section--${tone}`, className]}
+  aria-labelledby={headingId}
+  {...attrs}
+>
+  <div class:list={['container', { 'container--narrow': narrow }]}>
+    {
+      title && (
+        <header class="section__header">
+          {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+          <h2 id={headingId} class="section__title" set:html={emphasize(title)} />
+          {intro && <p class="section__intro">{intro}</p>}
+        </header>
+      )
+    }
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section__header {
+    display: grid;
+    justify-items: center;
+    gap: 0.9rem;
+    max-width: 44rem;
+    margin: 0 auto clamp(2rem, 5vw, 3.25rem);
+    text-align: center;
+  }
+
+  .section__title {
+    font-size: clamp(1.85rem, 5.5vw, 2.85rem);
+  }
+
+  .section__intro {
+    font-size: 1.125rem;
+    color: var(--ink-soft);
+  }
+
+  .section--dark .section__intro {
+    color: var(--aqua-100);
+  }
+</style>

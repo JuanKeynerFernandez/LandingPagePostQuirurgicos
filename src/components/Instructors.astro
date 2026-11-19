@@ -1,0 +1,163 @@
+---
+import { Image } from 'astro:assets';
+import { course } from '../data/course';
+import { findImage } from '../lib/images';
+import Icon from './ui/Icon.astro';
+import Section from './ui/Section.astro';
+
+const { instructors } = course;
+
+const people = instructors.people.map((person) => ({
+  ...person,
+  image: findImage(person.photo),
+}));
+---
+
+<Section id="instructora" eyebrow={instructors.eyebrow} title={instructors.title}>
+  <div class="people">
+    {
+      people.map((person) => (
+        <article class="person">
+          <div class="person__photo">
+            {person.image ? (
+              <Image
+                src={person.image}
+                alt={person.name ?? 'Instructora del curso'}
+                widths={[320, 480, 640]}
+                sizes="(min-width: 860px) 360px, 80vw"
+              />
+            ) : (
+              <span class="pending">Pendiente: foto de la instructora</span>
+            )}
+          </div>
+
+          <div class="person__content">
+            <h3 class="person__name">
+              {person.name ?? <span class="pending">Pendiente: nombre de la instructora</span>}
+            </h3>
+            <p class="person__role">
+              {person.role ?? <span class="pending">Pendiente: profesión y experiencia</span>}
+            </p>
+            <p class="person__bio">
+              {person.bio ?? (
+                <span class="pending">
+                  Pendiente: biografía corta (trayectoria, años de experiencia, formación real)
+                </span>
+              )}
+            </p>
+
+            {person.highlights.length > 0 && (
+              <ul class="person__highlights">
+                {person.highlights.map((item) => (
+                  <li>
+                    <Icon name="check" size={16} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <blockquote class="person__quote">
+              <p>“{instructors.quote}”</p>
+            </blockquote>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .people {
+    display: grid;
+    gap: clamp(3rem, 8vw, 5rem);
+  }
+
+  .person {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .person__photo {
+    display: grid;
+    place-items: center;
+    width: min(100%, 20rem);
+    aspect-ratio: 4 / 5;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 40% 40% var(--radius-lg) var(--radius-lg);
+    background: linear-gradient(160deg, var(--aqua-100), var(--aqua-300));
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .person__photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .person__photo .pending {
+    margin: 1.5rem;
+  }
+
+  .person__content {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .person__name {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+
+  .person__role {
+    font-weight: 700;
+    color: var(--aqua-700);
+  }
+
+  .person__bio {
+    color: var(--ink-soft);
+  }
+
+  .person__highlights {
+    display: grid;
+    gap: 0.6rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .person__highlights li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .person__highlights :global(.icon) {
+    margin-top: 0.3rem;
+    color: var(--aqua-600);
+  }
+
+  .person__quote {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 4px solid var(--aqua-300);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--aqua-900);
+  }
+
+  @media (min-width: 860px) {
+    .person {
+      grid-template-columns: 22rem 1fr;
+      gap: 4rem;
+    }
+
+    .person__photo {
+      width: 100%;
+    }
+  }
+</style>

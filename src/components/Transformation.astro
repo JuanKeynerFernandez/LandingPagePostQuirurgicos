@@ -1,0 +1,144 @@
+---
+import { course } from '../data/course';
+import Icon from './ui/Icon.astro';
+import Section from './ui/Section.astro';
+
+const { transformation } = course;
+---
+
+<Section
+  id="transformacion"
+  eyebrow={transformation.eyebrow}
+  title={transformation.title}
+>
+  <div class="compare">
+    <article class="card card--before">
+      <h3 class="card__title">{transformation.before.title}</h3>
+      <ul class="card__list">
+        {
+          transformation.before.items.map((item) => (
+            <li>
+              <span class="card__mark">
+                <Icon name="x" size={14} />
+              </span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <span class="compare__arrow" aria-hidden="true">
+      <Icon name="arrow-down" size={22} />
+    </span>
+
+    <article class="card card--after">
+      <h3 class="card__title">{transformation.after.title}</h3>
+      <ul class="card__list">
+        {
+          transformation.after.items.map((item) => (
+            <li>
+              <span class="card__mark">
+                <Icon name="check" size={14} />
+              </span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+  </div>
+</Section>
+
+<style>
+  .compare {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    border-radius: var(--radius-lg);
+  }
+
+  .card--before {
+    border: 1px solid var(--line);
+    background: var(--sand);
+  }
+
+  .card--after {
+    background: linear-gradient(160deg, var(--aqua-800), var(--aqua-950));
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .card__title {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  .card--before .card__title {
+    color: var(--ink-soft);
+  }
+
+  .card__list {
+    display: grid;
+    gap: 0.9rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .card__list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .card__mark {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+
+  .card--before .card__mark {
+    background: #f6e3dd;
+    color: var(--negative);
+  }
+
+  .card--after .card__mark {
+    background: var(--aqua-300);
+    color: var(--aqua-950);
+  }
+
+  .compare__arrow {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--aqua-100);
+    color: var(--aqua-700);
+  }
+
+  @media (min-width: 860px) {
+    .compare {
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .card {
+      height: 100%;
+    }
+
+    .compare__arrow {
+      transform: rotate(-90deg);
+    }
+  }
+</style>

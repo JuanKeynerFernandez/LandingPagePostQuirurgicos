@@ -1,0 +1,68 @@
+---
+import { course } from '../data/course';
+import { emphasize } from '../lib/text';
+import FlowArt from './ui/FlowArt.astro';
+import WhatsAppButton from './ui/WhatsAppButton.astro';
+
+const { finalCta } = course;
+---
+
+<section class="final" aria-labelledby="final-titulo" data-hide-sticky>
+  <div class="container">
+    <div class="final__panel">
+      <FlowArt class="final__art" />
+      <div class="final__content">
+        <h2 id="final-titulo" class="final__title" set:html={emphasize(finalCta.title)} />
+        <p class="final__text">{finalCta.text}</p>
+        <WhatsAppButton intent="enroll" placement="final" variant="light" size="lg">
+          {finalCta.cta}
+        </WhatsAppButton>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final {
+    padding-block: var(--section-space);
+  }
+
+  .final__panel {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2.5rem, 8vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(150deg, var(--aqua-700), var(--aqua-950));
+    color: #fff;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .final__panel :global(.final__art) {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+  }
+
+  .final__content {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  .final__title {
+    font-size: clamp(1.9rem, 6vw, 3rem);
+  }
+
+  .final__title :global(em) {
+    color: var(--aqua-300);
+  }
+
+  .final__text {
+    font-size: 1.125rem;
+    color: var(--aqua-100);
+  }
+</style>

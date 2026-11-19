@@ -1,0 +1,117 @@
+---
+import { site } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+import BrandMark from './ui/BrandMark.astro';
+import Icon from './ui/Icon.astro';
+
+const year = new Date().getFullYear();
+
+const socials = [
+  { label: 'Instagram', icon: 'instagram', url: site.social.instagram },
+  { label: 'Facebook', icon: 'facebook', url: site.social.facebook },
+] as const;
+---
+
+<footer class="footer" data-hide-sticky>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <BrandMark size={40} />
+      <p class="footer__name">{site.name}</p>
+      <p class="footer__tagline">Formación para esteticistas, cosmetólogas y terapeutas.</p>
+    </div>
+
+    <nav class="footer__links" aria-label="Contacto y redes">
+      <a href={whatsappUrl('info')} target="_blank" rel="noopener" data-whatsapp="footer">
+        <Icon name="whatsapp" size={18} />
+        WhatsApp
+      </a>
+      {
+        socials.map(
+          (social) =>
+            social.url && (
+              <a href={social.url} target="_blank" rel="noopener">
+                <Icon name={social.icon} size={18} />
+                {social.label}
+              </a>
+            ),
+        )
+      }
+      <a href="/politica-de-privacidad/">Política de privacidad</a>
+    </nav>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© {year} {site.name}. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 3.5rem 0 7rem;
+    background: var(--aqua-950);
+    color: var(--aqua-100);
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .footer__brand {
+    display: grid;
+    gap: 0.6rem;
+    justify-items: start;
+  }
+
+  .footer__name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .footer__tagline {
+    max-width: 22rem;
+    font-size: 0.9375rem;
+  }
+
+  .footer__links {
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
+  }
+
+  .footer__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 2.5rem;
+    text-decoration: none;
+  }
+
+  .footer__links a:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .footer__bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(255 255 255 / 0.12);
+    font-size: 0.875rem;
+    color: var(--aqua-200);
+  }
+
+  @media (min-width: 760px) {
+    .footer__grid {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .footer {
+      padding-bottom: 2.5rem;
+    }
+  }
+</style>

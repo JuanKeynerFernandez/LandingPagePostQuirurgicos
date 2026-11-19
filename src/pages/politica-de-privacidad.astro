@@ -1,0 +1,107 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+
+const { owner, email, updatedAt } = site.legal;
+---
+
+<BaseLayout
+  title={`Política de privacidad | ${site.name}`}
+  description="Cómo tratamos la información de las personas que visitan este sitio y nos escriben por WhatsApp."
+>
+  <Header />
+  <main id="contenido" class="legal">
+    <div class="container container--narrow">
+      <p class="eyebrow">Legal</p>
+      <h1>Política de privacidad</h1>
+      <p class="legal__updated">Última actualización: {updatedAt}</p>
+
+      <h2>Responsable</h2>
+      <p>
+        El responsable de este sitio es {
+          owner ?? <span class="pending">Pendiente: nombre o razón social</span>
+        }. Para cualquier consulta sobre tus datos puedes escribir a {
+          email ? (
+            <a href={`mailto:${email}`}>{email}</a>
+          ) : (
+            <span class="pending">Pendiente: correo de contacto</span>
+          )
+        } o a nuestro <a href={whatsappUrl('question')} target="_blank" rel="noopener" data-whatsapp="privacidad">WhatsApp</a>.
+      </p>
+
+      <h2>Qué información recopilamos</h2>
+      <p>
+        Este sitio no tiene formularios ni cuentas de usuario. Si nos escribes por WhatsApp, recibimos
+        los datos que decidas compartir en la conversación, como tu nombre y tu número, y los usamos
+        solo para responder tu consulta e informarte sobre el curso.
+      </p>
+
+      <h2>Parámetros de campaña</h2>
+      <p>
+        Si llegas desde un anuncio, el enlace puede incluir parámetros de campaña (UTM). Los guardamos
+        temporalmente en tu navegador durante la visita y los agregamos como referencia al mensaje de
+        WhatsApp para saber qué anuncio te trajo.
+      </p>
+
+      <h2>Cookies y medición</h2>
+      <p>
+        Podemos usar el píxel de Meta (Facebook e Instagram) para medir los resultados de nuestros
+        anuncios. Este servicio puede usar cookies y recibir información técnica de tu visita, según
+        la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacidad de Meta</a>.
+      </p>
+
+      <h2>WhatsApp</h2>
+      <p>
+        Las conversaciones se realizan a través de WhatsApp, que trata la información según sus
+        propios términos y su política de privacidad.
+      </p>
+
+      <h2>Tus derechos</h2>
+      <p>
+        Puedes pedirnos en cualquier momento que consultemos, corrijamos o eliminemos los datos que nos
+        hayas compartido, escribiéndonos por los canales indicados arriba.
+      </p>
+
+      <h2>Cambios</h2>
+      <p>
+        Podemos actualizar esta política. La fecha de la última actualización aparece al inicio de
+        esta página.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal {
+    padding-block: clamp(2.5rem, 7vw, 4.5rem);
+  }
+
+  .legal h1 {
+    margin-top: 0.75rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+  }
+
+  .legal h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+  }
+
+  .legal p {
+    color: var(--ink-soft);
+  }
+
+  .legal a {
+    color: var(--aqua-700);
+    font-weight: 600;
+  }
+
+  .legal__updated {
+    margin-top: 0.75rem;
+    font-size: 0.9375rem;
+  }
+</style>

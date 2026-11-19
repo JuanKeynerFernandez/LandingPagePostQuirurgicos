@@ -1,0 +1,55 @@
+---
+import WhatsAppButton from './ui/WhatsAppButton.astro';
+---
+
+<div class="sticky-cta" data-sticky-cta>
+  <WhatsAppButton intent="info" placement="barra-movil" block>Quiero más información</WhatsAppButton>
+</div>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-sticky-cta]');
+  const targets = document.querySelectorAll('[data-hide-sticky]');
+
+  if (bar && targets.length > 0) {
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      }
+      bar.toggleAttribute('data-visible', visible.size === 0);
+    });
+    targets.forEach((target) => observer.observe(target));
+  }
+</script>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
+    background: rgb(255 255 255 / 0.94);
+    box-shadow: 0 -10px 30px -14px rgb(11 63 58 / 0.35);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    transform: translateY(110%);
+    transition:
+      transform 0.3s ease,
+      visibility 0s linear 0.3s;
+  }
+
+  .sticky-cta[data-visible] {
+    visibility: visible;
+    transform: none;
+    transition: transform 0.3s ease;
+  }
+
+  @media (min-width: 900px) {
+    .sticky-cta {
+      display: none;
+    }
+  }
+</style>

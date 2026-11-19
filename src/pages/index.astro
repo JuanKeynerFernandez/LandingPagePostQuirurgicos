@@ -1,0 +1,36 @@
+---
+import Audience from '../components/Audience.astro';
+import Details from '../components/Details.astro';
+import Faq from '../components/Faq.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Instructors from '../components/Instructors.astro';
+import Method from '../components/Method.astro';
+import Modules from '../components/Modules.astro';
+import Pains from '../components/Pains.astro';
+import StickyCta from '../components/StickyCta.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Transformation from '../components/Transformation.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Pains />
+    <Transformation />
+    <Method />
+    <Modules />
+    <Audience />
+    <Instructors />
+    <Details />
+    <Testimonials />
+    <Faq />
+    <FinalCta />
+  </main>
+  <Footer />
+  <StickyCta />
+</BaseLayout>

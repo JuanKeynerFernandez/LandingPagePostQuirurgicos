@@ -1,0 +1,124 @@
+---
+import { course } from '../data/course';
+import Section from './ui/Section.astro';
+import WhatsAppButton from './ui/WhatsAppButton.astro';
+
+const { method } = course;
+---
+
+<Section
+  id="metodo"
+  tone="dark"
+  class="method"
+  eyebrow={method.eyebrow}
+  title={method.title}
+  intro={method.intro}
+>
+  <ol class="steps">
+    {
+      method.steps.map((step) => (
+        <li class="step">
+          <span class="step__letter" aria-hidden="true">
+            {step.letter}
+          </span>
+          <span class="step__label">{step.label}</span>
+        </li>
+      ))
+    }
+  </ol>
+
+  <blockquote class="method__quote">
+    <p>“{method.quote}”</p>
+  </blockquote>
+
+  <div class="method__cta">
+    <WhatsAppButton intent="info" placement="metodo" variant="light" size="lg">{method.cta}</WhatsAppButton>
+  </div>
+</Section>
+
+<style>
+  .method {
+    background:
+      radial-gradient(40rem 26rem at 90% 0%, rgb(35 168 150 / 0.35), transparent 70%),
+      radial-gradient(30rem 24rem at 0% 100%, rgb(35 168 150 / 0.18), transparent 70%),
+      var(--aqua-900);
+  }
+
+  .steps {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.04);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .step:hover {
+    border-color: rgb(127 214 200 / 0.5);
+    background: rgb(255 255 255 / 0.08);
+  }
+
+  .step__letter {
+    width: 2.25rem;
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    color: var(--aqua-300);
+  }
+
+  .step__label {
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+
+  .method__quote {
+    max-width: 40rem;
+    margin: clamp(2.5rem, 6vw, 3.5rem) auto 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 4vw, 1.85rem);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    text-wrap: balance;
+    color: var(--aqua-100);
+  }
+
+  .method__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .step {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .step__letter {
+      width: auto;
+      font-size: 3rem;
+    }
+  }
+</style>
