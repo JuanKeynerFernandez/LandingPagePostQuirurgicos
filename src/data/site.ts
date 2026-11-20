@@ -6,7 +6,7 @@ export const site: Site = {
   name: courseName,
   title: `${courseName} | Curso para esteticistas y terapeutas`,
   description:
-    'Aprende a valorar, acompañar y tratar pacientes postquirúrgicas con criterio, propósito y seguridad. Formación para esteticistas, cosmetólogas y terapeutas.',
+    'Aprende a valorar, acompañar y tratar usuarios postquirúrgicos con criterio, propósito y seguridad. Formación para esteticistas, cosmetólogas y terapeutas.',
   locale: 'es_LA',
   themeColor: '#0b3f3a',
   logo: 'brand/logo.png',

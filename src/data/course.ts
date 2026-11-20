@@ -4,7 +4,7 @@ export const course: Course = {
   hero: {
     eyebrow: 'Curso para esteticistas, cosmetólogas y terapeutas',
     title: 'Trabaja tus postquirúrgicos con *criterio*, no con miedo',
-    lead: 'Aprende a valorar, acompañar y tratar pacientes postquirúrgicas con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
+    lead: 'Aprende a valorar, acompañar y tratar usuarios postquirúrgicos con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
     cta: 'Quiero más información',
     secondaryCta: 'Ver los módulos',
     highlights: ['10 módulos', 'Método P.R.O.P.Ó.S.I.T.O', 'Casos reales'],
@@ -17,10 +17,10 @@ export const course: Course = {
     eyebrow: '¿Te ha pasado?',
     title: 'Si alguna vez pensaste esto, este curso es para ti',
     items: [
-      'La paciente se endureció y no supe qué hacer.',
+      'El usuario se endureció y no supe qué hacer.',
       'Tengo miedo de estar empeorando una fibrosis.',
       'No sé si estoy trabajando bien desde el inicio.',
-      'Con unas pacientes me va súper bien y con otras no.',
+      'Con unos usuarios me va súper bien y con otros no.',
     ],
     closing: 'No es falta de talento: es falta de *criterio*.',
   },
@@ -31,9 +31,9 @@ export const course: Course = {
     before: {
       title: 'Hoy',
       items: [
-        'Tienes miedo de empeorar a una paciente.',
+        'Tienes miedo de empeorar a un usuario.',
         'No sabes si estás drenando bien.',
-        'Trabajas igual con todas las pacientes.',
+        'Trabajas igual con todos los usuarios.',
         'Te angustias cuando aparecen bolitas o endurecimientos.',
         'Haces maniobras por repetición.',
       ],
@@ -41,7 +41,7 @@ export const course: Course = {
     after: {
       title: 'Al terminar el curso',
       items: [
-        'Valoras correctamente a cada paciente postquirúrgica.',
+        'Valoras correctamente a cada usuario postquirúrgico.',
         'Sabes qué hacer según la etapa del postoperatorio.',
         'Previenes la fibrosis desde el inicio.',
         'Diferencias edema, inflamación y fibrosis.',
@@ -55,19 +55,19 @@ export const course: Course = {
     eyebrow: 'El método',
     title: 'Método *P.R.O.P.Ó.S.I.T.O*',
     intro:
-      'Aquí no aprenderás maniobras memorizadas. Aprenderás a entender qué está pasando en el cuerpo de tu paciente.',
+      'Aquí no aprenderás maniobras memorizadas. Aprenderás a entender qué está pasando en el cuerpo de tu usuario.',
     steps: [
       { letter: 'P', label: 'Preparar y valorar' },
       { letter: 'R', label: 'Reconocer el tejido' },
       { letter: 'O', label: 'Observar señales' },
       { letter: 'P', label: 'Prevenir fibrosis' },
-      { letter: 'Ó', label: 'Orientar a la paciente' },
+      { letter: 'Ó', label: 'Orientar al usuario' },
       { letter: 'S', label: 'Seguridad terapéutica' },
       { letter: 'I', label: 'Intervenir con criterio' },
       { letter: 'T', label: 'Tratar según evolución' },
       { letter: 'O', label: 'Obtener mejores resultados' },
     ],
-    quote: 'Hacer lo correcto, para la paciente correcta, en el momento correcto.',
+    quote: 'Hacer lo correcto, para el usuario correcto, en el momento correcto.',
     cta: 'Quiero aprender el método',
   },
 
@@ -85,13 +85,13 @@ export const course: Course = {
           'Fases reales del postoperatorio',
           'Inflamación normal vs. anormal',
           'Cómo cicatriza el tejido',
-          'Por qué no todas las pacientes evolucionan igual',
+          'Por qué no todos los usuarios evolucionan igual',
           'El error de trabajar igual a todas',
         ],
         result: 'Entiendes el proceso del cuerpo y dejas de trabajar a ciegas.',
       },
       {
-        title: 'Antes de tocar: aprende a valorar una paciente postquirúrgica con criterio',
+        title: 'Antes de tocar: aprende a valorar a un usuario postquirúrgico con criterio',
         topics: [
           'Cómo hacer una valoración profesional',
           'Qué preguntas hacer',
@@ -103,7 +103,7 @@ export const course: Course = {
         result: 'Valoras con seguridad y dejas de improvisar.',
       },
       {
-        title: '¿Tu paciente se endurece? Aprende a prevenir fibrosis desde la primera sesión',
+        title: '¿Tu usuario se endurece? Aprende a prevenir fibrosis desde la primera sesión',
         topics: [
           'Qué es realmente la fibrosis',
           'Endurecimiento normal vs. fibrosis',
@@ -117,10 +117,10 @@ export const course: Course = {
       {
         title: 'Protocolo según la etapa del postoperatorio',
         topics: [
-          'Paciente de 1 a 3 días',
-          'Paciente de 7 días',
-          'Paciente de 15 días',
-          'Paciente de 1 mes',
+          'Usuario de 1 a 3 días de operado',
+          'Usuario de 7 días de operado',
+          'Usuario de 15 días de operado',
+          'Usuario de 1 mes de operado',
           'Qué sí hacer y qué no hacer',
           'Intensidad correcta',
         ],
@@ -148,7 +148,7 @@ export const course: Course = {
           'Dolor de alarma',
           'Cuándo remitir',
         ],
-        result: 'Proteges a tu paciente y actúas con criterio.',
+        result: 'Proteges a tu usuario y actúas con criterio.',
       },
       {
         title: 'Aprende a leer el tejido: lo que tus manos deben sentir',
@@ -162,10 +162,10 @@ export const course: Course = {
         result: 'Dejas de depender solo de la vista.',
       },
       {
-        title: 'No solo es drenar: acompaña a tu paciente con propósito',
+        title: 'No solo es drenar: acompaña a tu usuario con propósito',
         topics: [
           'Comunicación terapéutica',
-          'Cómo educar a la paciente',
+          'Cómo educar al usuario',
           'Cómo transmitir seguridad',
           'Manejo emocional del postoperatorio',
           'Empatía sin perder profesionalismo',
@@ -206,7 +206,7 @@ export const course: Course = {
       items: [
         'Eres esteticista, cosmetóloga, auxiliar o terapeuta.',
         'Ya realizas drenajes, pero sientes inseguridad.',
-        'Has tenido pacientes con endurecimientos.',
+        'Has tenido usuarios con endurecimientos.',
         'Quieres dejar de improvisar y actualizarte.',
         'Buscas diferenciarte profesionalmente.',
       ],
@@ -216,7 +216,7 @@ export const course: Course = {
       items: [
         'Buscas memorizar maniobras sin entender el porqué.',
         'Crees que «si duele, sirve».',
-        'Quieres un mismo protocolo para todas las pacientes.',
+        'Quieres un mismo protocolo para todos los usuarios.',
       ],
     },
     patientNote:
@@ -279,7 +279,7 @@ export const course: Course = {
       'Checklist de valoración postquirúrgica',
       'Guía rápida de señales de alarma',
       'Mapa de prevención de fibrosis por etapas',
-      'Frases para educar a tus pacientes y generar confianza',
+      'Frases para educar a tus usuarios y generar confianza',
     ],
   },
 
@@ -298,12 +298,12 @@ export const course: Course = {
       {
         question: '¿A quién está dirigido el curso?',
         answer:
-          'A esteticistas, cosmetólogas, auxiliares y terapeutas que trabajan con pacientes postquirúrgicas y quieren hacerlo con criterio, seguridad y propósito.',
+          'A esteticistas, cosmetólogas, auxiliares y terapeutas que trabajan con usuarios postquirúrgicos y quieren hacerlo con criterio, seguridad y propósito.',
       },
       {
         question: '¿Es otro curso de drenaje?',
         answer:
-          'No. Aquí no memorizas maniobras: aprendes a valorar a la paciente, leer el tejido y decidir qué hacer según la etapa del postoperatorio.',
+          'No. Aquí no memorizas maniobras: aprendes a valorar al usuario, leer el tejido y decidir qué hacer según la etapa del postoperatorio.',
       },
       {
         question: '¿Aprenderé a «romper» la fibrosis?',
