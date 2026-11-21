@@ -78,9 +78,10 @@ export interface CourseModule {
 export interface Instructor {
   name: string | null;
   role: string | null;
-  bio: string | null;
-  photo: string;
   highlights: string[];
+  bio: string[];
+  quote: string | null;
+  photo: string;
 }
 
 export interface DetailItem {
@@ -108,7 +109,7 @@ export interface Course {
   method: SectionCopy & { steps: MethodStep[]; quote: string; cta: string };
   modules: SectionCopy & { items: CourseModule[]; cta: string };
   audience: SectionCopy & { for: ChecklistCard; notFor: ChecklistCard; patientNote: string };
-  instructors: SectionCopy & { people: Instructor[]; quote: string };
+  instructors: SectionCopy & { people: Instructor[] };
   details: SectionCopy & { items: DetailItem[]; cta: string };
   bonuses: { confirmed: boolean; title: string; items: string[] };
   certification: { title: string; description: string } | null;

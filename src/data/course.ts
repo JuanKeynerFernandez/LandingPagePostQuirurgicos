@@ -7,9 +7,9 @@ export const course: Course = {
     lead: 'Aprende a valorar, acompañar y tratar usuarios postquirúrgicos con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
     cta: 'Quiero más información',
     secondaryCta: 'Ver los módulos',
-    highlights: ['10 módulos', 'Método P.R.O.P.Ó.S.I.T.O', 'Casos reales'],
+    highlights: ['Más de 15 años de experiencia', '10 módulos', 'Método P.R.O.P.Ó.S.I.T.O'],
     image: 'images/hero.jpg',
-    imageAlt: 'Instructora del curso Postquirúrgicos con Propósito',
+    imageAlt: 'Flor Milena Hincapié, instructora del curso Postquirúrgicos con Propósito',
     quote: 'No todo tejido duro es fibrosis.',
   },
 
@@ -224,16 +224,28 @@ export const course: Course = {
   },
 
   instructors: {
-    eyebrow: 'Quién te enseña',
-    title: 'Aprende con quien trabaja con *propósito*',
-    quote: 'No trabajes por protocolo. Trabaja por criterio.',
+    eyebrow: 'Conoce a tu instructora',
+    title: 'Aprende de la *experiencia*',
+    intro: 'Comprende cada proceso y transforma tu manera de trabajar los postquirúrgicos.',
     people: [
       {
-        name: null,
-        role: null,
-        bio: null,
+        name: 'Flor Milena Hincapié',
+        role: 'Profesional de la salud y especialista en acompañamiento postquirúrgico estético',
+        highlights: [
+          'Más de 15 años de experiencia en drenajes y acompañamiento postquirúrgico',
+          'Formación en enfermería, servicio farmacéutico y cosmetología',
+          'Experiencia en casas de recuperación (Recovery) de Medellín',
+          'Usuarios de distintas regiones de Colombia y de otros países',
+        ],
+        bio: [
+          'Soy una profesional apasionada por la salud, la estética y el acompañamiento humano. Mi trayectoria se basa en el conocimiento, la práctica y el aprendizaje constante.',
+          'Estos años me han enseñado que cada cirugía, cada cuerpo y cada proceso de recuperación son diferentes. Por eso, el abordaje postquirúrgico no debe basarse en protocolos generalizados, sino en el conocimiento, la observación y el criterio profesional.',
+          'Hoy quiero compartir contigo lo que he aprendido en este camino, para ayudarte a fortalecer tu seguridad profesional y a diseñar protocolos postquirúrgicos con propósito, de manera consciente, individualizada y responsable.',
+          'Porque detrás de cada procedimiento hay una persona que merece conocimiento, respeto y un acompañamiento profesional.',
+        ],
+        quote:
+          'Más de 15 años acompañando procesos de recuperación. Hoy transformo mi experiencia en conocimiento para formar profesionales que trabajan con propósito.',
         photo: 'images/instructora.jpg',
-        highlights: [],
       },
     ],
   },
