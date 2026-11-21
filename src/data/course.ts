@@ -3,13 +3,13 @@ import type { Course } from './types';
 export const course: Course = {
   hero: {
     eyebrow: 'Curso para esteticistas, cosmetólogas y terapeutas',
-    title: 'Trabaja tus postquirúrgicos con *criterio*, no con miedo',
-    lead: 'Aprende a valorar, acompañar y tratar usuarios postquirúrgicos con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
+    title: 'Trabaja tus posquirúrgicos con *criterio*, no con miedo',
+    lead: 'Aprende a valorar, acompañar y tratar usuarios posquirúrgicos con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
     cta: 'Quiero más información',
     secondaryCta: 'Ver los módulos',
     highlights: ['Más de 15 años de experiencia', '10 módulos', 'Método P.R.O.P.Ó.S.I.T.O'],
     image: 'images/hero.jpg',
-    imageAlt: 'Flor Milena Hincapié, instructora del curso Postquirúrgicos con Propósito',
+    imageAlt: 'Flor Milena Hincapié, instructora del curso Posquirúrgicos con Propósito',
     quote: 'No todo tejido duro es fibrosis.',
   },
 
@@ -41,7 +41,7 @@ export const course: Course = {
     after: {
       title: 'Al terminar el curso',
       items: [
-        'Valoras correctamente a cada usuario postquirúrgico.',
+        'Valoras correctamente a cada usuario posquirúrgico.',
         'Sabes qué hacer según la etapa del postoperatorio.',
         'Previenes la fibrosis desde el inicio.',
         'Diferencias edema, inflamación y fibrosis.',
@@ -91,7 +91,7 @@ export const course: Course = {
         result: 'Entiendes el proceso del cuerpo y dejas de trabajar a ciegas.',
       },
       {
-        title: 'Antes de tocar: aprende a valorar a un usuario postquirúrgico con criterio',
+        title: 'Antes de tocar: aprende a valorar a un usuario posquirúrgico con criterio',
         topics: [
           'Cómo hacer una valoración profesional',
           'Qué preguntas hacer',
@@ -127,7 +127,7 @@ export const course: Course = {
         result: 'Sabes qué hacer en cada momento de la recuperación.',
       },
       {
-        title: 'Drena sin lastimar: postquirúrgicos sin dolor y con mejores resultados',
+        title: 'Drena sin lastimar: posquirúrgicos sin dolor y con mejores resultados',
         topics: [
           'Presión correcta',
           'Cómo trabajar sin generar trauma',
@@ -185,7 +185,7 @@ export const course: Course = {
         result: 'Ganas seguridad real.',
       },
       {
-        title: 'Construye tu protocolo postquirúrgico con propósito',
+        title: 'Construye tu protocolo posquirúrgico con propósito',
         topics: [
           'Cómo organizar las sesiones',
           'Protocolos por tipo de cirugía',
@@ -220,27 +220,27 @@ export const course: Course = {
       ],
     },
     patientNote:
-      '¿Eres paciente y buscas un drenaje postquirúrgico? Este curso es una formación para profesionales. Sigue siempre las indicaciones de tu cirujano.',
+      '¿Eres paciente y buscas un drenaje posquirúrgico? Este curso es una formación para profesionales. Sigue siempre las indicaciones de tu cirujano.',
   },
 
   instructors: {
     eyebrow: 'Conoce a tu instructora',
     title: 'Aprende de la *experiencia*',
-    intro: 'Comprende cada proceso y transforma tu manera de trabajar los postquirúrgicos.',
+    intro: 'Comprende cada proceso y transforma tu manera de trabajar los posquirúrgicos.',
     people: [
       {
         name: 'Flor Milena Hincapié',
-        role: 'Profesional de la salud y especialista en acompañamiento postquirúrgico estético',
+        role: 'Profesional de la salud y especialista en acompañamiento posquirúrgico estético',
         highlights: [
-          'Más de 15 años de experiencia en drenajes y acompañamiento postquirúrgico',
+          'Más de 15 años de experiencia en drenajes y acompañamiento posquirúrgico',
           'Formación en enfermería, servicio farmacéutico y cosmetología',
           'Experiencia en casas de recuperación (Recovery) de Medellín',
           'Usuarios de distintas regiones de Colombia y de otros países',
         ],
         bio: [
           'Soy una profesional apasionada por la salud, la estética y el acompañamiento humano. Mi trayectoria se basa en el conocimiento, la práctica y el aprendizaje constante.',
-          'Estos años me han enseñado que cada cirugía, cada cuerpo y cada proceso de recuperación son diferentes. Por eso, el abordaje postquirúrgico no debe basarse en protocolos generalizados, sino en el conocimiento, la observación y el criterio profesional.',
-          'Hoy quiero compartir contigo lo que he aprendido en este camino, para ayudarte a fortalecer tu seguridad profesional y a diseñar protocolos postquirúrgicos con propósito, de manera consciente, individualizada y responsable.',
+          'Estos años me han enseñado que cada cirugía, cada cuerpo y cada proceso de recuperación son diferentes. Por eso, el abordaje posquirúrgico no debe basarse en protocolos generalizados, sino en el conocimiento, la observación y el criterio profesional.',
+          'Hoy quiero compartir contigo lo que he aprendido en este camino, para ayudarte a fortalecer tu seguridad profesional y a diseñar protocolos posquirúrgicos con propósito, de manera consciente, individualizada y responsable.',
           'Porque detrás de cada procedimiento hay una persona que merece conocimiento, respeto y un acompañamiento profesional.',
         ],
         quote:
@@ -288,7 +288,7 @@ export const course: Course = {
     confirmed: false,
     title: 'Bonos incluidos',
     items: [
-      'Checklist de valoración postquirúrgica',
+      'Checklist de valoración posquirúrgica',
       'Guía rápida de señales de alarma',
       'Mapa de prevención de fibrosis por etapas',
       'Frases para educar a tus usuarios y generar confianza',
@@ -310,7 +310,7 @@ export const course: Course = {
       {
         question: '¿A quién está dirigido el curso?',
         answer:
-          'A esteticistas, cosmetólogas, auxiliares y terapeutas que trabajan con usuarios postquirúrgicos y quieren hacerlo con criterio, seguridad y propósito.',
+          'A esteticistas, cosmetólogas, auxiliares y terapeutas que trabajan con usuarios posquirúrgicos y quieren hacerlo con criterio, seguridad y propósito.',
       },
       {
         question: '¿Es otro curso de drenaje?',

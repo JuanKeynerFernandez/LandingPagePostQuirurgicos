@@ -1,4 +1,4 @@
-# Postquirúrgicos con Propósito: landing page
+# Posquirúrgicos con Propósito: landing page
 
 Landing page estática para convertir el tráfico de Facebook e Instagram (Meta Ads) en conversaciones de WhatsApp.
 
