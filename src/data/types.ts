@@ -21,6 +21,7 @@ export interface Site {
   name: string;
   title: string;
   description: string;
+  tagline: string;
   locale: string;
   themeColor: string;
   logo: string;

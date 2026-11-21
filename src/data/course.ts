@@ -2,7 +2,7 @@ import type { Course } from './types';
 
 export const course: Course = {
   hero: {
-    eyebrow: 'Curso para esteticistas, cosmetólogas y terapeutas',
+    eyebrow: 'Curso para esteticistas y auxiliares de enfermería',
     title: 'Trabaja tus posquirúrgicos con *criterio*, no con miedo',
     lead: 'Aprende a valorar, acompañar y tratar usuarios posquirúrgicos con un protocolo claro: qué hacer, cuándo hacerlo y por qué hacerlo.',
     cta: 'Quiero más información',
@@ -204,9 +204,9 @@ export const course: Course = {
     for: {
       title: 'Es para ti si…',
       items: [
-        'Eres esteticista, cosmetóloga, auxiliar o terapeuta.',
-        'Ya realizas drenajes, pero sientes inseguridad.',
-        'Has tenido usuarios con endurecimientos.',
+        'Eres esteticista, cosmetóloga o auxiliar de enfermería.',
+        'Nunca has trabajado con posquirúrgicos y quieres empezar con bases sólidas.',
+        'Ya haces drenajes, pero sientes inseguridad o has tenido usuarios con endurecimientos.',
         'Quieres dejar de improvisar y actualizarte.',
         'Buscas diferenciarte profesionalmente.',
       ],
@@ -220,7 +220,7 @@ export const course: Course = {
       ],
     },
     patientNote:
-      '¿Eres paciente y buscas un drenaje posquirúrgico? Este curso es una formación para profesionales. Sigue siempre las indicaciones de tu cirujano.',
+      '¿Eres paciente y buscas un drenaje posquirúrgico? Este curso es una formación para esteticistas y auxiliares de enfermería. Sigue siempre las indicaciones de tu cirujano.',
   },
 
   instructors: {
@@ -310,7 +310,12 @@ export const course: Course = {
       {
         question: '¿A quién está dirigido el curso?',
         answer:
-          'A esteticistas, cosmetólogas, auxiliares y terapeutas que trabajan con usuarios posquirúrgicos y quieren hacerlo con criterio, seguridad y propósito.',
+          'A esteticistas, cosmetólogas y auxiliares de enfermería, tanto si ya trabajan con posquirúrgicos como si quieren empezar desde cero.',
+      },
+      {
+        question: '¿Necesito experiencia previa?',
+        answer:
+          'No necesitas experiencia en posquirúrgicos. Solo debes ser esteticista, cosmetóloga o auxiliar de enfermería. El curso te sirve si empiezas desde cero y también si ya haces drenajes y quieres trabajar con más criterio.',
       },
       {
         question: '¿Es otro curso de drenaje?',
@@ -332,14 +337,9 @@ export const course: Course = {
         answer: 'Te enviamos la inversión, las formas de pago y el calendario por WhatsApp.',
       },
       {
-        question: '¿Necesito experiencia previa?',
+        question: '¿El curso es para pacientes en recuperación?',
         answer:
-          'El curso está pensado para profesionales que ya trabajan con drenajes y quieren más criterio. Si estás empezando, escríbenos y te orientamos.',
-      },
-      {
-        question: 'Soy paciente, ¿este curso es para mí?',
-        answer:
-          'No. Es una formación para profesionales. Si estás en recuperación, sigue siempre las indicaciones de tu cirujano.',
+          'No. Es una formación para esteticistas y auxiliares de enfermería. Si estás en recuperación de una cirugía, sigue siempre las indicaciones de tu cirujano.',
       },
     ],
   },

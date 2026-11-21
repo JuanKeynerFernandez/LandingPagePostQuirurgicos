@@ -4,9 +4,10 @@ const courseName = 'Posquirúrgicos con Propósito';
 
 export const site: Site = {
   name: courseName,
-  title: `${courseName} | Curso para esteticistas y terapeutas`,
+  title: `${courseName} | Curso para esteticistas y auxiliares de enfermería`,
   description:
-    'Aprende a valorar, acompañar y tratar usuarios posquirúrgicos con criterio, propósito y seguridad. Formación para esteticistas, cosmetólogas y terapeutas.',
+    'Aprende a acompañar usuarios posquirúrgicos con criterio y seguridad. Curso para esteticistas y auxiliares de enfermería, con o sin experiencia previa.',
+  tagline: 'Formación para esteticistas, cosmetólogas y auxiliares de enfermería.',
   locale: 'es_LA',
   themeColor: '#0b3f3a',
   logo: 'brand/logo.png',
